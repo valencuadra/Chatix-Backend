@@ -21,7 +21,7 @@ const server = require("http").createServer(app);
 const PORT = 5001;
 const io = require("socket.io")(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "https://chatix.netlify.app",
         methods: ["GET", "POST"]
     }
 })
@@ -97,5 +97,5 @@ app.get("/rooms", (req, res) => {
 })
 
 server.listen(PORT, ()=> {
-    console.log("Server activo en el puerto", PORT)
+    console.log("Server activiño en el puerto", PORT)
 })
