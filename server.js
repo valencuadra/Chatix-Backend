@@ -96,6 +96,6 @@ app.get("/rooms", (req, res) => {
     res.json(rooms)
 })
 
-server.listen(process.env.port || PORT, ()=> {
-    console.log("Server activo en el puertiño", PORT)
+server.listen(process.env.PORT, ()=> {
+    console.log("Server activo en el puertiño", process.env.PORT)
 })
