@@ -18,10 +18,10 @@ require("./connection")
 
 //comunicación entre el server y el cliente
 const server = require("http").createServer(app);
-const PORT = 5001;
+const PORT = process.env.PORT || 5001;
 const io = require("socket.io")(server, {
     cors: {
-        origin: "http://localhost:3000",
+        origin: "https://chatix.netlify.app/",
         methods: ["GET", "POST"]
     }
 })
@@ -96,6 +96,6 @@ app.get("/rooms", (req, res) => {
     res.json(rooms)
 })
 
-server.listen(process.env.PORT, ()=> {
-    console.log("Server activo en el puertiño", process.env.PORT)
+server.listen(PORT, ()=> {
+    console.log("Server activo en el puertiño", PORT)
 })
